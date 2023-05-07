@@ -1,4 +1,4 @@
-package com.payslip.payslipbatch.runner;
+package com.payslip.batch.runner;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -8,9 +8,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.payslip.payslipbatch.JobContext;
-import com.payslip.payslipbatch.JobRunner;
-import com.payslip.payslipbatch.service.PayslipCreateService;
+import com.payslip.batch.JobContext;
+import com.payslip.batch.JobRunner;
+import com.payslip.batch.service.PayslipCreateService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = { JobRunner.class }, args = { "20230101",

@@ -9,7 +9,7 @@
 		<relativePath/>
 		<!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.payslip</groupId>
+	<groupId>com.payslip.batch</groupId>
 	<artifactId>payslip-batch</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>payslip-batch</name>

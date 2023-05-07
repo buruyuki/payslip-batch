@@ -1,4 +1,4 @@
-package com.payslip.payslipbatch.service;
+package com.payslip.batch.service;
 
 import java.time.LocalDate;
 

@@ -1,4 +1,4 @@
-package com.payslip.payslipbatch.runner;
+package com.payslip.batch.runner;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -11,9 +11,9 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.payslip.payslipbatch.JobContext;
-import com.payslip.payslipbatch.JobRunner;
-import com.payslip.payslipbatch.service.PayslipCreateService;
+import com.payslip.batch.JobContext;
+import com.payslip.batch.JobRunner;
+import com.payslip.batch.service.PayslipCreateService;
 
 public class PayslipCreateJobRunner implements CommandLineRunner {
 

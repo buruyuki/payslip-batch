@@ -1,4 +1,4 @@
-package com.payslip.payslipbatch.exception;
+package com.payslip.batch.exception;
 
 public class PayslipApplicationBussinessRuntimeException extends RuntimeException {
 

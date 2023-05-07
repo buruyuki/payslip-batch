@@ -1,4 +1,4 @@
-package com.payslip.payslipbatch;
+package com.payslip.batch;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;

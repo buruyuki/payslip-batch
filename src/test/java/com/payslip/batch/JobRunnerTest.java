@@ -1,4 +1,4 @@
-package com.payslip.payslipbatch;
+package com.payslip.batch;
 
 import java.util.function.Supplier;
 

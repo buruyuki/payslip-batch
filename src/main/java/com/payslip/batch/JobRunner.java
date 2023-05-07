@@ -1,4 +1,4 @@
-package com.payslip.payslipbatch;
+package com.payslip.batch;
 
 import java.time.Duration;
 import java.time.Instant;
@@ -11,9 +11,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import com.payslip.payslipbatch.common.config.JobExitStatus;
-import com.payslip.payslipbatch.exception.PayslipApplicationBussinessRuntimeException;
-import com.payslip.payslipbatch.exception.PayslipBussinessException;
+import com.payslip.batch.common.config.JobExitStatus;
+import com.payslip.batch.exception.PayslipApplicationBussinessRuntimeException;
+import com.payslip.batch.exception.PayslipBussinessException;
 
 @SpringBootApplication
 public class JobRunner {

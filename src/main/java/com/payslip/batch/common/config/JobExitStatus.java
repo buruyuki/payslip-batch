@@ -1,4 +1,5 @@
-package com.payslip.payslipbatch.common.config;
+
+package com.payslip.batch.common.config;
 
 public enum JobExitStatus {
 
