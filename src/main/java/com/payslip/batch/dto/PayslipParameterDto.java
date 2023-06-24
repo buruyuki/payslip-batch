@@ -1,8 +1,17 @@
 package com.payslip.batch.dto;
 
 public class PayslipParameterDto {
+    private String aggregationPeriod;
     private String createYear;
     private String createMonth;
+
+    public String getAggregationPeriod() {
+        return aggregationPeriod;
+    }
+
+    public void setAggregationPeriod(String aggregationPeriod) {
+        this.aggregationPeriod = aggregationPeriod;
+    }
 
     public String getCreateYear() {
         return createYear;

@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import com.payslip.batch.dto.PayslipDetailDto;
 import com.payslip.batch.dto.PayslipParameterDto;
+import com.payslip.batch.dto.PayslipSummaryDto;
 import com.payslip.batch.exception.PayslipApplicationRuntimeException;
 import com.payslip.batch.util.JasperPDFUtil;
 
@@ -19,6 +20,8 @@ import net.sf.jasperreports.engine.JRException;
 
 @Service
 public class PdfCreateSharedService {
+
+    private final static String DETAIL_LIST_LENGTH = "listlength";
 
     public void createPdf(List<PayslipDetailDto> details) {
 
@@ -30,16 +33,31 @@ public class PdfCreateSharedService {
 
         String outputPath = targetDir + fileName;
 
+        if (details.size() == 0) {
+            return;
+        }
         PayslipParameterDto parameterDto = new PayslipParameterDto();
-        parameterDto.setCreateYear("2023");
-        parameterDto.setCreateMonth("3");
+        // 明細は最新の日付でソートしているためリストの先頭が新しい日付
+        String endYearMonth = details.get(0).getIssueDate();
+        String startYearMonth = details.get(details.size() - 1).getIssueDate();
+        String aggregationPeriod = "";
+        if (startYearMonth.equals(endYearMonth)) {
+            aggregationPeriod = endYearMonth;
+        } else {
+            aggregationPeriod = startYearMonth + "〜" + endYearMonth;
+        }
+        parameterDto.setAggregationPeriod(aggregationPeriod);
+        // parameterDto.setCreateYear("2023");
+        // parameterDto.setCreateMonth("3");
 
         Map<String, Object> mapParameter = JasperPDFUtil.getParameterMap(parameterDto);
+        mapParameter.put(DETAIL_LIST_LENGTH, details.size());
 
         try {
-            JasperPDFUtil.createPdf(url, outputPath, mapParameter, new JREmptyDataSource());
-            // JasperPDFUtil.createPdf(url, outputPath, mapParameter,
-            // JasperPDFUtil.getCollectionDatasource(details));
+            // JasperPDFUtil.createPdf(url, outputPath, mapParameter, new
+            // JREmptyDataSource());
+            JasperPDFUtil.createPdf(url, outputPath, mapParameter,
+                    JasperPDFUtil.getCollectionDatasource(details));
         } catch (JRException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

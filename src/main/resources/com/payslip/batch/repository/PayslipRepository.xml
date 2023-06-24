@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+    "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.payslip.batch.repository.PayslipRepository">
+
+    <resultMap id="payslipSummaryDtoResultMap" type="com.payslip.batch.dto.PayslipSummaryDto">
+        <id property="userId" column="user_id" />
+        <result property="issueDate" column="issue_date" />
+        <result property="payslipType" column="payslip_type" />
+        <result property="kijyunnnai" column="kijyunnnai" />
+        <result property="kijyunngai" column="kijyunngai" />
+        <result property="sonotasikyuu" column="sonotasikyuu" />
+        <result property="syakaihokenryou" column="syakaihokenryou" />
+        <result property="syotokuzei" column="syotokuzei" />
+        <result property="jyuuminnzei" column="jyuuminnzei" />
+        <result property="ippannkoujyo" column="ippannkoujyo" />
+        <result property="hurikomisikyuugaku" column="hurikomisikyuugaku" />
+        <result property="createJobId" column="create_job_id" />
+        <result property="updateJobId" column="update_job_id" />
+    </resultMap>
+
+    <select id="findAllByUserId" resultMap="payslipSummaryDtoResultMap">
+        <![CDATA[
+        SELECT
+            user_id, 
+            issue_date, 
+            payslip_type, 
+            kijyunnnai,
+            kijyunngai,
+            sonotasikyuu,
+            syakaihokenryou,
+            syotokuzei,
+            jyuuminnzei,
+            ippannkoujyo,
+            hurikomisikyuugaku,
+            create_job_id,
+            update_job_id
+        FROM
+            payslip_summaries
+        WHERE
+            user_id = #{userId}
+        ORDER BY 
+            payslip_type ASC, issue_date DESC
+        ]]>
+    </select>
+
+</mapper>

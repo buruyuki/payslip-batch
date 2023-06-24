@@ -36,6 +36,7 @@ public class PayslipCreateJobRunnerTest {
     public void run_01() throws Exception {
         jobRunner.run("20230501");
 
+        System.out.println("success");
     }
 
 }

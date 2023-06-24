@@ -1,42 +1,350 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
-<!-- 2023-05-07T23:25:42 -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ada51f46-0c25-4db8-9242-9861961871dd">
+<!-- 2023-06-25T00:41:32 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="ada51f46-0c25-4db8-9242-9861961871dd">
+	<parameter name="aggregationPeriod" class="java.lang.String"/>
 	<parameter name="createYear" class="java.lang.String"/>
 	<parameter name="createMonth" class="java.lang.String"/>
+	<parameter name="listlength" class="java.lang.Integer"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
-	<background>
-		<band splitType="Stretch"/>
-	</background>
+	<field name="issueDate" class="java.lang.String"/>
+	<field name="payslipType" class="java.lang.String"/>
+	<field name="kijyunnnai" class="java.lang.String"/>
+	<field name="kijyunngai" class="java.lang.String"/>
+	<field name="sonotasikyuu" class="java.lang.String"/>
+	<field name="syakaihokenryou" class="java.lang.String"/>
+	<field name="syotokuzei" class="java.lang.String"/>
+	<field name="jyuuminnzei" class="java.lang.String"/>
+	<field name="ippannkoujyo" class="java.lang.String"/>
+	<field name="hurikomisikyuugaku" class="java.lang.String"/>
 	<title>
-		<band height="130" splitType="Stretch">
+		<band height="30" splitType="Stretch">
 			<textField>
-				<reportElement x="112" y="55" width="330" height="20" uuid="0f3f14f2-254c-4479-9226-114f19454897"/>
+				<reportElement x="10" y="10" width="330" height="20" uuid="0f3f14f2-254c-4479-9226-114f19454897"/>
 				<textElement markup="html">
 					<font fontName="IPA明朝" size="10"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$P{createYear} + "年" + $P{createMonth} + "月分 給与支給明細書"]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{aggregationPeriod} + " 給与支給明細書"]]></textFieldExpression>
 			</textField>
 		</band>
 	</title>
 	<pageHeader>
-		<band height="35" splitType="Stretch"/>
+		<band height="20" splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="61" splitType="Stretch"/>
+		<band height="18" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="10" y="7" width="45" height="10" uuid="635b68be-0b1e-4f59-b36e-d3e287fdb5f2">
+					<property name="com.jaspersoft.studio.unit.hight" value="pixel"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="1.5" lineStyle="Double"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPA明朝" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["支給年月"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="55" y="7" width="35" height="10" uuid="761d6ec9-1da0-44b7-a01a-f07bc0839c71">
+					<property name="com.jaspersoft.studio.unit.hight" value="pixel"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="1.5" lineStyle="Double"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPA明朝" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["支給区分"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="90" y="7" width="50" height="10" uuid="d4cf4512-5696-4b98-9853-e5d02384562a">
+					<property name="com.jaspersoft.studio.unit.hight" value="pixel"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="1.5" lineStyle="Double"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPA明朝" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["基準内"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="140" y="7" width="50" height="10" uuid="3336d44f-ff72-49e0-821c-c2fdc13af036">
+					<property name="com.jaspersoft.studio.unit.hight" value="pixel"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="1.5" lineStyle="Double"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPA明朝" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["基準外"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="190" y="7" width="50" height="10" uuid="3336d44f-ff72-49e0-821c-c2fdc13af036">
+					<property name="com.jaspersoft.studio.unit.hight" value="pixel"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="1.5" lineStyle="Double"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPA明朝" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["その他支給"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="240" y="7" width="50" height="10" uuid="3336d44f-ff72-49e0-821c-c2fdc13af036">
+					<property name="com.jaspersoft.studio.unit.hight" value="pixel"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="1.5" lineStyle="Double"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPA明朝" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["社会保険料"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="290" y="7" width="50" height="10" uuid="3336d44f-ff72-49e0-821c-c2fdc13af036">
+					<property name="com.jaspersoft.studio.unit.hight" value="pixel"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="1.5" lineStyle="Double"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPA明朝" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["所得税"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="340" y="7" width="50" height="10" uuid="3336d44f-ff72-49e0-821c-c2fdc13af036">
+					<property name="com.jaspersoft.studio.unit.hight" value="pixel"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="1.5" lineStyle="Double"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPA明朝" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["住民税"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="390" y="7" width="50" height="10" uuid="3336d44f-ff72-49e0-821c-c2fdc13af036">
+					<property name="com.jaspersoft.studio.unit.hight" value="pixel"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="1.5" lineStyle="Double"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPA明朝" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["一般控除"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="440" y="7" width="50" height="10" uuid="3336d44f-ff72-49e0-821c-c2fdc13af036">
+					<property name="com.jaspersoft.studio.unit.hight" value="pixel"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="1.5" lineStyle="Double"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPA明朝" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["振込支給額"]]></textFieldExpression>
+			</textField>
+		</band>
 	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch"/>
+		<band height="10" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="10" y="0" width="45" height="10" uuid="0498bcaf-7aee-401c-a2e8-8b43e2a9c83f"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<leftPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="IPA明朝" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{issueDate}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="55" y="0" width="35" height="10" uuid="a160538f-154c-4834-ba87-5cbf2b644773"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<leftPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="IPA明朝" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{payslipType}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="90" y="0" width="50" height="10" uuid="af1b28d1-1b81-4ff7-8728-fac96ee6c5f2"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<leftPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font fontName="IPA明朝" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kijyunnnai}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="140" y="0" width="50" height="10" uuid="6d3ae743-274e-468d-8212-736692377224"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<leftPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font fontName="IPA明朝" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kijyunngai}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="190" y="0" width="50" height="10" uuid="6d3ae743-274e-468d-8212-736692377224"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<leftPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font fontName="IPA明朝" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sonotasikyuu}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="240" y="0" width="50" height="10" uuid="6d3ae743-274e-468d-8212-736692377224"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<leftPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font fontName="IPA明朝" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{syakaihokenryou}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="290" y="0" width="50" height="10" uuid="6d3ae743-274e-468d-8212-736692377224"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<leftPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font fontName="IPA明朝" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{syotokuzei}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="340" y="0" width="50" height="10" uuid="6d3ae743-274e-468d-8212-736692377224"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<leftPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font fontName="IPA明朝" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{jyuuminnzei}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="390" y="0" width="50" height="10" uuid="6d3ae743-274e-468d-8212-736692377224"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<leftPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font fontName="IPA明朝" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ippannkoujyo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="440" y="0" width="50" height="10" uuid="6d3ae743-274e-468d-8212-736692377224"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<leftPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font fontName="IPA明朝" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hurikomisikyuugaku}]]></textFieldExpression>
+			</textField>
+		</band>
 	</detail>
 	<columnFooter>
-		<band height="45" splitType="Stretch"/>
+		<band height="2">
+			<line>
+				<reportElement x="10" y="0" width="480" height="1" uuid="1c32f6e5-414a-428d-8b06-35cd80e8dff6"/>
+			</line>
+		</band>
 	</columnFooter>
 	<pageFooter>
-		<band height="54" splitType="Stretch"/>
+		<band height="30">
+			<frame>
+				<reportElement positionType="FixRelativeToBottom" x="10" y="0" width="480" height="2" uuid="3f6d263b-f186-4175-8387-d55243133b96">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<printWhenExpression><![CDATA[$V{PAGE_COUNT}!=0? true:$V{REPORT_COUNT}!=$P{listlength}?true:false]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+				</box>
+			</frame>
+			<textField evaluationTime="Page">
+				<reportElement x="0" y="10" width="260" height="15"/>
+				<textElement textAlignment="Right">
+					<font fontName="IPA明朝" size="7"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{PAGE_NUMBER}+"/"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="261" y="10" width="14" height="15"/>
+				<textElement textAlignment="Left">
+					<font fontName="IPA明朝" size="7"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
 	</pageFooter>
-	<summary>
-		<band height="42" splitType="Stretch"/>
-	</summary>
 </jasperReport>
